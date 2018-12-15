@@ -28,9 +28,8 @@
 ### Body Weight & Height
    <span style="font-size:1.2em;">It has been proved by science that human body weight and height follows a 2D normal distribution. We found real body weight and height data for Americans from (https://www.kaggle.com/mustafaali96/weight-height/downloads/weight-height.csv/1). We studies the data and followed the distribution shown by the data except that we decreased the average male body weight by 27 lbs to make the data more like weights for college students. (Before the adjustment, the average BMI for male is slightly above 25 while according to [the study](http://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1038&context=nutritiondiss), average BMI for college male student is around 24). We verified the BMI for both male and female and think it represents the body condition for college students pretty well. </span>
    
-<p style="text-align: center;"> **Female** </p> |<p style="text-align: center;">  **Male**</p> 
--------------------------|-------------------------
-<img src="female.png">  |  <img src="male.png">
+<img src="female.png">
+<img src="male.png">
 
  
 
