@@ -28,9 +28,9 @@
 ### Body Weight & Height
    <span style="font-size:1.2em;">It has been proved by science that human body weight and height follows a 2D normal distribution. We found real body weight and height data for Americans from (https://www.kaggle.com/mustafaali96/weight-height/downloads/weight-height.csv/1). We studies the data and followed the distribution shown by the data except that we decreased the average male body weight by 27 lbs to make the data more like weights for college students. (Before the adjustment, the average BMI for male is slightly above 25 while according to [the study](http://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1038&context=nutritiondiss), average BMI for college male student is around 24). We verified the BMI for both male and female and think it represents the body condition for college students pretty well. </span>
  
-|<p style="text-align: center;"> **Female** </p> |<p style="text-align: center;">  **Male**</p> |
-|-----------------------|-------------------------|
-|<img src="female.png">  |  <img src="male.png">|
+**Female** |**Male**
+-|-
+![alt](female.png) | ![alt](male.png)
 
  
 
@@ -63,12 +63,12 @@
 In the simulation,plots of both male and female show that all three methods lead to weight loss.**For females,we could see that combination of diet and exercise would contribute to more weight loss**.And plans with only diet or only exercise would lead to weight loss,too.But the weight loss is less compared with combo plan.We can also see a subtle difference between these two plan,choosing only exercise seems to be a little bit more helpful in weight loss than only diet does.**However,things appear to be the opposite for men**.Plan with only diet help men lose more pounds than plan with only exercise,which is interesting.Maybe it is because men eat more than women,and eating less would make their calory intake decrease more than women.
 
 **Female**              
-|-------------------------|-------------------------|
-![](img src="avg6mo.png") | ![](img src="deltaweight.png")
+-|-
+![alt](avg6mo.png) | ![alt](deltaweight.png)
 
 **Male**              
-|-------------------------|-------------------------|
-|<img src="avg6mo2.png">|<img src="deltaweight2.png">|
+-|-
+![alt](avg6mo2.png) | ![alt](deltaweight2.png)
 
 Overall,females who chose to lose weight lost 3.550 lbs,while males lost 2.9771 lbs,which might indicate that females who choose to lose weight tend to lose more weights than males.
 
