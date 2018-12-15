@@ -64,7 +64,7 @@ In the simulation,plots of both male and female show that all three methods lead
 
 **Female**              
 |-------------------------|-------------------------|
-<img src="avg6mo.png">  |  <img src="deltaweight.png">
+![](img src="avg6mo.png") | ![](img src="deltaweight.png")
 
 **Male**              
 |-------------------------|-------------------------|
