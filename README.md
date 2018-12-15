@@ -15,15 +15,14 @@ The problem with this strategy is that because it takes a little bit long time f
 We can not use simple calculations to achieve this goal, so we decide to apply Monte Carlo simulation.
 
 First, we’ve created a user interface where the user can provide his personal information:
-
-First Name
-Last Name
-Gender: male, female 
-Age
-Nationality
-City
-Personality: introvert, extrovert, ambivert 
-Likes: travelling, adventures, pets, partying etc. 
+1. First Name
+2. Last Name
+3. Gender: male, female 
+4. Age
+5. Nationality
+6. City
+7. Personality: introvert, extrovert, ambivert 
+8. Likes: travelling, adventures, pets, partying etc. 
 
 Then, we ask the user to enter his three highest priority parameters among them which according to him matters most to him while choosing a match. With these input, we look into the database (dummy dataset containing information of 200 people) and recommend the user his top matches based on the base score. 
 
