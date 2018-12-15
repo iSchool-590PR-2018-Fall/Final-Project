@@ -1,13 +1,6 @@
 import numpy as np
-#from mpl_toolkits import mplot3d
 import matplotlib.pyplot as plt
-#from scipy.stats import multivariate_normal
-import matplotlib as mpl
 import pandas as pd
-#from scipy.stats import norm
-#from scipy.stats import probplot
-#from scipy.stats import mode
-#import seaborn as sns
 from scipy import stats
 
 # PERT distribution will be used for generate diet calorie, diet_break calorie, exercise time
@@ -130,7 +123,9 @@ def cal2lb(calories,month=1):
     :param calories: an array of calories
     :param month: an int the represent months during which the person is to realize his/her goal
     
-    :return lb: a list of weight changes 
+    :return lb: a list of weight changes
+    >>> cal2lb([-300,200])
+    [-0.08105228571428572, -0.018666714285714286]
     '''
     lb = []
     for i in range(len(calories)):
@@ -149,6 +144,9 @@ def eat_more(diet_gw_pop, month =1):
     :param month: an int the represent months during which the person is to realize his/her goal
     
     :return diet_list: a list of total calories that a man will add in a month
+    >>> diet_gw_pop = np.random.randint(10,50,8)
+    >>> len(diet_gw_pop)
+    8
     '''
     # 0.9 (27 days a month) chance follow diet calorie and 0.1 of diet-break
     diet_list = []
@@ -165,6 +163,9 @@ def light_ex(ex_gw_pop,month =1):
     :param month: an int the represent months during which the person is to realize his/her goal
     
     :return diet_list: a list of total exercise time in minutes that a man will do in a month
+    >>> diet_gw_pop = np.random.randint(5,10,19)
+    >>> len(diet_gw_pop)
+    19
     '''
     ex_time = []
     for i in range(len(ex_gw_pop)):
@@ -262,7 +263,7 @@ def population(pop_size=1000,male=m,female=f):
     # Suppose 26% male wants to lose weight, 14% of them wants to gain wegiht, and the rest 60% wants to maintain
 
     male_lw = male_pop.sample(frac=0.26)
-    male_gw = male_pop.drop(male_pop.index[male_lw.index.values]).sample(frac=0.16/(1-0.26))
+    male_gw = male_pop.drop(male_pop.index[male_lw.index.values]).sample(frac=0.14/(1-0.26))
     male_maintain = male_pop.drop(male_pop.index[list(male_lw.index.values)+list(male_gw.index.values)])
     male_pop['Goal']= np.zeros(len(male_pop))
     male_pop.loc[male_lw.index.values,'Goal'] = 'Lose Weight'
@@ -289,7 +290,11 @@ def female_monthly( female_pop, goal ,month=1):
     :param female_pop: a dataframe representing a subset of female with a certain goal
     :param goal: a string that shows the goal. Two goals avaialbe: "Lose Weight","Maintain"
     :return result: a dataframe with columns: 'BMR','Diet (calories)','Exercise Time/Multiple','Weight Change',and 'New Weight'  
-    
+    >>> p = population(15)
+    >>> result = female_monthly(p[1],'Maintain') # doctest:+ELLIPSIS
+    There are ... weight change.
+    >>> type(result)
+    <class 'pandas.core.frame.DataFrame'>
     '''
     female_reset = female_pop.reset_index(drop=True)
     one_month_later = pd.DataFrame()
@@ -394,7 +399,11 @@ def male_monthly(male_pop, goal = 'Lose Weight',month=1):
     :param female_pop: a dataframe representing a subset of female with a certain goal
     :param goal: a string that shows the goal. Three goals avaialbe: "Lose Weight","Maintain", and "Gain Weight"
     :return result: a dataframe with columns: 'BMR','Diet (calories)','Exercise Time/Multiple','Weight Change',and 'New Weight'  
-    
+    >>> p = population(150)
+    >>> result = male_monthly(p[0]) # doctest:+ELLIPSIS
+    There are ... on average.
+    >>> type(result)
+    <class 'pandas.core.frame.DataFrame'>
     '''
     male_reset = male_pop.reset_index(drop=True)
     one_month_later = pd.DataFrame()
@@ -690,7 +699,7 @@ while True:
 
 if __name__ == '__main__':
     import doctest
-    doctest.testmod(verbose=False)
+    doctest.testmod(verbose=True,optionflags=doctest.ELLIPSIS)
 
 
 
