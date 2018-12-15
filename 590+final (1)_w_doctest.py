@@ -98,7 +98,7 @@ def meal_multiple(maintain_pop,month =1):
     '''
     multiple = []
     for i in range(len(maintain_pop)):
-        multiple.append(sum(pert_rand(-0.1,0,1.5,100,int(30*month)))) # exercise 3 times a week, 4 week per month, so 12 times per month
+        multiple.append(sum(pert_rand(-0.1,0.1,1.5,100,int(30*month)))) # exercise 3 times a week, 4 week per month, so 12 times per month
     multiple = np.array(multiple)
     return multiple
 
