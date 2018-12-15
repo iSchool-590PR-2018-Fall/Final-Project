@@ -545,10 +545,12 @@ def male_monthly(male_pop, goal = 'Lose Weight',month=1):
 
 # In[27]:
 
-print("Hi there, welcome to the UIUC student body weight simulation! This program will simulation a certain size of UIUC students who want to lose, gain, or maintain their weight over a period of time. I will ask you a few questions to customize the program and will show you how their body weight change. Thank you for your interaction!")
+print(
+    "Hi there, welcome to the UIUC student body weight simulation! This program will simulation a certain size of UIUC students who want to lose, gain, or maintain their weight over a period of time. I will ask you a few questions to customize the program and will show you how their body weight change. Thank you for your interaction!")
 
 # population inputs: population size, number of months
-pop_size = input('How large would you like the population to be? (Please enter an integer greater than one, e.g. 1000.)   : ')
+pop_size = input(
+    'How large would you like the population to be? (Please enter an integer greater than one, e.g. 1000.)   : ')
 if pop_size.isdigit():
     pop_size = int(pop_size)
     pop_size
@@ -562,66 +564,71 @@ if mon.isdigit():
 else:
     print('Please input a valid integer that is greater than 0')
 
-pop = population(pop_size,male=m,female=f)
+pop = population(pop_size, male=m, female=f)
 #  0          1           2           3           4        5          6   
 # male_pop, female_pop, male_lw, male_maintain,male_gw, female_lw, female_maintain
-print('Great! I have simulated {} students, and among them {} are females, {} are males'.format(pop_size,pop[-1],pop[-2]))
+print('Great! I have simulated {} students, and among them {} are females, {} are males'.format(pop_size, pop[-1],
+                                                                                                pop[-2]))
 
 # ------------------------------------------------------------------------------------------------------------------------
 # Results inputs: gender, goals
 while True:
-    f_or_m = input('Would you want to see the results of female or male? (Please enter "F" for female or "M" for male)   : ')
-    if f_or_m.lower() == 'F'.lower():
+    f_or_m = input(
+        'Would you want to see the results of female or male? (Please enter "F" for female or "M" for male)   : ')
+    if f_or_m.lower() == "f":
         while True:
-            goal = input('Would you want to see the results of women who have lost weight or maintained their weight? (Please enter "L" for lose weight, "M" for maintain)  ')
-            if goal.lower() != 'L'.lower() and goal.lower() != 'M'.lower():
+            goal = input(
+                'Would you want to see the results of women who have lost weight or maintained their weight? (Please enter "L" for lose weight, "M" for maintain)  ')
+            if goal.lower() != "l" and goal.lower() != "m":
                 print('\n Please enter "L" for lose weight or "M" for maintain weight')
             else:
                 break
         break
-    elif f_or_m.lower() == 'M'.lower():
+    elif f_or_m.lower() == "m":
         while True:
-            goal = input('Would you want to see the results of men who have lost, gained or maintained their weight?  (Please enter "L" for lose weight, "G" for gain weight, M" for maintain)  ')
-            if goal.lower() != 'L'.lower() and goal.lower() != 'M'.lower() and goal.lower() != 'G'.lower():
+            goal = input(
+                'Would you want to see the results of men who have lost, gained or maintained their weight?  (Please enter "L" for lose weight, "G" for gain weight, M" for maintain)  ')
+            if goal.lower() != "l" and goal.lower() != "m" and goal.lower() != "g":
                 print('\n Please enter "L" for lose weight, "M" for maintain weight, or "G" for gain weight')
             else:
                 break
         break
-    else: 
+    else:
         print('\n Please enter "M" for men or "F" for women')
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Generating results
-if f_or_m == "F".lower() and goal == "L".lower():
+if f_or_m.lower() == "f" and goal.lower() == "l":
     f_lw = pop[5]
-    result = female_monthly(f_lw,'Lose Weight',mon)
+    result = female_monthly(f_lw, 'Lose Weight', mon)
     print('\n Here is the fist five rows of this subset of students')
     print(result.head())
-elif f_or_m == "F".lower() and goal == "M".lower():
+elif f_or_m.lower() == "f" and goal.lower() == "m":
     f_m = pop[6]
-    result = female_monthly(f_m,'Maintain',mon) 
+    result = female_monthly(f_m, 'Maintain', mon)
     print('\n Here is the fist five rows of this subset of students')
     print(result.head())
-elif f_or_m == "M".lower() and goal == "L".lower():
+elif f_or_m.lower() == "m" and goal.lower() == "l":
     m_lw = pop[2]
-    result = male_monthly(m_lw,'Lose Weight',mon)
+    result = male_monthly(m_lw, 'Lose Weight', mon)
     print('\n Here is the fist five rows of this subset of students')
     print(result.head())
-elif f_or_m == "M".lower() and goal == "G".lower():
+elif f_or_m.lower() == "m" and goal.lower() == "g":
     m_gw = pop[4]
-    result = male_monthly(m_gw,'Gain Weight',mon)
+    result = male_monthly(m_gw, 'Gain Weight', mon)
     print('\n Here is the fist five rows of this subset of students')
     print(result.head())
-elif f_or_m == "M".lower() and goal == "M".lower():
+elif f_or_m.lower() == "m" and goal.lower() == "m":
     m_m = pop[3]
-    result = male_monthly(m_m,'Maintain',mon)
+    result = male_monthly(m_m, 'Maintain', mon)
     print('\n Here is the fist five rows of this subset of students')
     print(result.head())
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Ask the user if they want to quit or to see another result
 while True:
-    user_input = input('Would you like to see another subset of students or quit? (Please enter "Y" to see results for results of other students and "Q" to quit. If you want to re-simulate the whole popuation, please quit and restart the program.)  ')
+    user_input = input(
+        'Would you like to see another subset of students or quit? (Please enter "Y" to see results for results of other students and "Q" to quit. If you want to re-simulate the whole popuation, please quit and restart the program.)  ')
     # if user wants to quit
     if user_input.lower() == "Q".lower():
         print('\n Thank you for using the program! Bye!')
@@ -632,53 +639,54 @@ while True:
     # if user wants to see another result
     elif user_input.lower() == "Y".lower():
         while True:
-            f_or_m = input('Would you want to see the results of female or male? (Please enter "F" for female or "M" for male)   : ')
-            if f_or_m.lower() == 'F'.lower():
+            f_or_m = input(
+                'Would you want to see the results of female or male? (Please enter "F" for female or "M" for male)   : ')
+            if f_or_m.lower() == "f":
                 while True:
-                    goal = input('Would you want to see the results of women who have lost weight or maintained their weight? (Please enter "L" for lose weight, "M" for maintain)  ')
-                    if goal.lower() != 'L'.lower() and goal.lower() != 'M'.lower():
+                    goal = input(
+                        'Would you want to see the results of women who have lost weight or maintained their weight? (Please enter "L" for lose weight, "M" for maintain)  ')
+                    if goal.lower() != "l" and goal.lower() != "m":
                         print('\n Please enter "L" for lose weight or "M" for maintain weight')
                     else:
                         break
                 break
-            elif f_or_m.lower() == 'M'.lower():
+            elif f_or_m.lower() == "m":
                 while True:
-                    goal = input('Would you want to see the results of men who have lost, gained or maintained their weight?  (Please enter "L" for lose weight, "G" for gain weight, M" for maintain)  ')
-                    if goal.lower() != 'L'.lower() and goal.lower() != 'M'.lower() and goal.lower() != 'G'.lower():
+                    goal = input(
+                        'Would you want to see the results of men who have lost, gained or maintained their weight?  (Please enter "L" for lose weight, "G" for gain weight, M" for maintain)  ')
+                    if goal.lower() != "l" and goal.lower() != "m" and goal.lower() != "g":
                         print('\n Please enter "L" for lose weight, "M" for maintain weight, or "G" for gain weight')
                     else:
                         break
                 break
-            else: 
+            else:
                 print('\n Please enter "M" for men or "F" for women')
         # generating a new result
-        if f_or_m == "F".lower() and goal == "L".lower():
+        if f_or_m.lower() == "f" and goal.lower() == "l":
             f_lw = pop[5]
-            result = female_monthly(f_lw,'Lose Weight',mon)
+            result = female_monthly(f_lw, 'Lose Weight', mon)
             print('\n Here is the fist five rows of this subset of students')
             print(result.head())
-        elif f_or_m == "F".lower() and goal == "M".lower():
+        elif f_or_m.lower() == "f" and goal.lower() == "m":
             f_m = pop[6]
-            result = female_monthly(f_m,'Maintain',mon) 
+            result = female_monthly(f_m, 'Maintain', mon)
             print('\n Here is the fist five rows of this subset of students')
             print(result.head())
-        elif f_or_m == "M".lower() and goal == "L".lower():
+        elif f_or_m.lower() == "m" and goal.lower() == "l":
             m_lw = pop[2]
-            result = male_monthly(m_lw,'Lose Weight',mon)
+            result = male_monthly(m_lw, 'Lose Weight', mon)
             print('\n Here is the fist five rows of this subset of students')
             print(result.head())
-        elif f_or_m == "M".lower() and goal == "G".lower():
+        elif f_or_m.lower() == "m" and goal.lower() == "g":
             m_gw = pop[4]
-            result = male_monthly(m_gw,'Gain Weight',mon)
+            result = male_monthly(m_gw, 'Gain Weight', mon)
             print('\n Here is the fist five rows of this subset of students')
             print(result.head())
-        elif f_or_m == "M".lower() and goal == "M".lower():
+        elif f_or_m.lower() == "m" and goal.lower() == "m":
             m_m = pop[3]
-            result = male_monthly(m_m,'Maintain',mon)
+            result = male_monthly(m_m, 'Maintain', mon)
             print('\n Here is the fist five rows of this subset of students')
             print(result.head())
-   
-        
 
 if __name__ == '__main__':
     import doctest
