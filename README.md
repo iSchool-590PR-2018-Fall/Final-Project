@@ -62,11 +62,11 @@
 ### Lose Weight: Diet or Exercise?
 In the simulation,plots of both male and female show that all three methods lead to weight loss.**For females,we could see that combination of diet and exercise would contribute to more weight loss**.And plans with only diet or only exercise would lead to weight loss,too.But the weight loss is less compared with combo plan.We can also see a subtle difference between these two plan,choosing only exercise seems to be a little bit more helpful in weight loss than only diet does.**However,things appear to be the opposite for men**.Plan with only diet help men lose more pounds than plan with only exercise,which is interesting.Maybe it is because men eat more than women,and eating less would make their calory intake decrease more than women.
 
-**Female**            |  
+**Female**              
 |-------------------------|-------------------------|
 <img src="avg6mo.png">  |  <img src="deltaweight.png">
 
-**Male**            |  
+**Male**              
 |-------------------------|-------------------------|
 |<img src="avg6mo2.png">|<img src="deltaweight2.png">|
 
