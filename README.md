@@ -21,7 +21,7 @@
 ### Age: age of the simulated students
    <span style="font-size:1.2em;"> We found the real age distribution from UIUC Demographic website (http://www.dmi.illinois.edu/stuenr/abstracts/FA17_ten.htm) and followed this distribution when generating students' ages. Age will affect a person's [Basal metabolic rate (BMR)](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=2ahUKEwiX2Yz09qDfAhXp6YMKHQwcDyoQFjACegQIBhAL&url=https%3A%2F%2Fwww.verywellfit.com%2Fwhat-is-bmr-or-basal-metabolic-rate-3495380&usg=AOvVaw2Zf4sgbiVRZR42H0GXNfGN) and heart rate which will further affects calories burn during exercise. </span>
 
-![alt](age.png)
+![](age.png)
    
 ### Gender
    <span style="font-size:1.2em;">We found the real gender distribution from the same website above and followed the real distribution when generating genders as well. Gender will affect BMR and number of calories burnt during exercise. </span>
@@ -32,7 +32,7 @@
 **Female                Male**
 -|-
 
-![alt](female.png) | ![alt](male.png)
+![](female.png) | ![](male.png)
 
  
 
