@@ -15,6 +15,7 @@ The problem with this strategy is that because it takes a little bit long time f
 We can not use simple calculations to achieve this goal, so we decide to apply Monte Carlo simulation.
 
 First, we’ve created a user interface where the user can provide his personal information:
+
 First Name
 Last Name
 Gender: male, female 
