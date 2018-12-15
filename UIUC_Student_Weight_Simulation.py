@@ -338,8 +338,8 @@ def female_monthly( female_pop, goal ,month=1):
         
         #visualization
         plt.plot((0,mon),(np.nanmean(diet_pop['Weight']),np.nanmean(diet_result['New Weight'])),'go-',color='steelblue',label='Only Diet Δ={}'.format(round(np.nanmean(diet_pop['Weight'])-np.nanmean(diet_result['New Weight']),4)))
-        plt.plot((0,mon),(np.nanmean(ex_pop['Weight']),np.nanmean(ex_result['New Weight'])),'go-',color='firebrick',label='Only Exercise Δ={}'.format(round(np.nanmean(ex_pop['Weight'])-np.nanmean(ex_result['New Weight'])),4))
-        plt.plot((0,mon),(np.nanmean(combo_pop['Weight']),np.nanmean(combo_result['New Weight'])),'go-',color='chocolate',label='Diet&Exercise Δ={}'.format(round(np.nanmean(combo_pop['Weight'])-np.nanmean(combo_result['New Weight'])),4))
+        plt.plot((0,mon),(np.nanmean(ex_pop['Weight']),np.nanmean(ex_result['New Weight'])),'go-',color='firebrick',label='Only Exercise Δ={}'.format(round(np.nanmean(ex_pop['Weight'])-np.nanmean(ex_result['New Weight']),4)))
+        plt.plot((0,mon),(np.nanmean(combo_pop['Weight']),np.nanmean(combo_result['New Weight'])),'go-',color='chocolate',label='Diet&Exercise Δ={}'.format(round(np.nanmean(combo_pop['Weight'])-np.nanmean(combo_result['New Weight']),4)))
         plt.title(('Average Weight: {} Months Before vs. After').format(mon))
         plt.legend(loc='best')
         plt.xlabel('Month(s)')
