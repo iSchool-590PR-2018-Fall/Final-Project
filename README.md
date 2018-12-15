@@ -21,7 +21,7 @@
 ### Age: age of the simulated students
    <span style="font-size:1.2em;"> We found the real age distribution from UIUC Demographic website (http://www.dmi.illinois.edu/stuenr/abstracts/FA17_ten.htm) and followed this distribution when generating students' ages. Age will affect a person's [Basal metabolic rate (BMR)](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=2ahUKEwiX2Yz09qDfAhXp6YMKHQwcDyoQFjACegQIBhAL&url=https%3A%2F%2Fwww.verywellfit.com%2Fwhat-is-bmr-or-basal-metabolic-rate-3495380&usg=AOvVaw2Zf4sgbiVRZR42H0GXNfGN) and heart rate which will further affects calories burn during exercise. </span>
 
-![alt text](age.png)
+<img src="age.png" width="500">
    
 ### Gender
    <span style="font-size:1.2em;">We found the real gender distribution from the same website above and followed the real distribution when generating genders as well. Gender will affect BMR and number of calories burnt during exercise. </span>
@@ -30,10 +30,10 @@
    <span style="font-size:1.2em;">It has been proved by science that human body weight and height follows a 2D normal distribution. We found real body weight and height data for Americans from (https://www.kaggle.com/mustafaali96/weight-height/downloads/weight-height.csv/1). We studies the data and followed the distribution shown by the data except that we decreased the average male body weight by 27 lbs to make the data more like weights for college students. (Before the adjustment, the average BMI for male is slightly above 25 while according to [the study](http://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1038&context=nutritiondiss), average BMI for college male student is around 24). We verified the BMI for both male and female and think it represents the body condition for college students pretty well. </span>
  
 **Female**              
-![alt text](female.png) 
+<img src="female.png" width="500">
 
  **Male**
-![alt text](male.png)
+<img src="male.png" width="500"> 
 
  
 
