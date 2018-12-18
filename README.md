@@ -12,8 +12,10 @@ TEMPLATE for your report to fill out:
 
 # Title: 
 
-## Team Member(s):
-(Note: Don't put your email addresses here (which is public).  If a student wants their NAME hidden as well, due to optional FERPA regulations, they can be listed purely by their GitHub ID).
+## Team Member(s) & Summary:
+(Note: Don't put your email addresses here (since this is public).  If a student wants their NAME hidden as well, due to optional FERPA regulations, they can be listed purely by their GitHub ID).
+
+If there are multiple students in your team, give a summary of which parts were done by each one. Note that GitHub commits from all members are expected to also show evidence of collaboration.
 
 # Monte Carlo Simulation Scenario & Purpose:
 (be sure to read the instructions given in course Moodle)
