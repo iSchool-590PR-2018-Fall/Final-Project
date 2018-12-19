@@ -18,7 +18,7 @@
 
 # Monte Carlo Simulation Scenario & Purpose:
    <span style="font-size:1.2em;">
-   Nowadays, more and more people, especially college students, are minding their body weight. Approximate 58% male students and 87% of female students are not satisfied with their body weight. There are so many possible ways to do this. I have heard about methods such as only eating apples for a week doing HIIT for 3 hours but eating whatever you want, and there are so many more ways out there. But which way is the most effective way? Diet or Exercise? In this Monte Carlo Simulation, you will have the chance to find out yourself!</span>
+   Nowadays, more and more people, especially college students, are minding their body weight. Approximate 58% male students and 87% of female students are not satisfied with their body weight. There are so many possible ways to do this. I have heard about methods such as only eating apples for a week doing HIIT for 3 hours but eating whatever you want, and there are so many more ways out there. But which way is the most effective way? Diet or Exercise? **In this Monte Carlo Simulation, you will have the chance to find out yourself!**</span>
 <span style="font-size:1.2em;">
    This Program simulates students from UIUC (i.e. the simulated population will have the same age and gender distribution as the demographics as UIUC). Each student will choose his/her goal to lose, maintain, or gain (only for males) weight. For those who want to lose or gain weight, they will have different plans to reach their goals: only dieting, only exercising, and combining dieting and exercising. The program will output students' final weight and compare it with the original weight to show you how much their weight change and which way is most effective. </span>
 
@@ -51,7 +51,7 @@
 ### Exercise Time (exercise_monthly)
    <span style="font-size:1.2em;">We assume people who wants to lose weight spend at least 0, at most 120 minutes, with 60  minutes as the most possible time for exercise every week. We believe this is close to the reality as it fits most of the students schedule well. </span>
 
-### Dialy exercise time multiple  (ex_multiple)
+### Daily exercise time multiple  (ex_multiple)
    <span style="font-size:1.2em;">This multiple will be multiplied to BMR and the result represents how much calorie the person will burn during activities compared to BMR. It has the lowest, most frequent and highest value of 0,0.1, and 0.2. This multiple is for people who wants to maintain their body weights and acording to many researches we found,most people will burn 10% of the BMR during daily activities.</span>
 
 ### Daily Calorie intake multiple (mean_multiple)
@@ -86,7 +86,7 @@ From the plots of maintaining weight of female and male,we could see that women 
 ## Instructions on how to use the program:
 
 <span style="font-size:1.2em;">
-    Simply run the program and it will display instructions and user input space for you. 
+    Simply run "UIUC_Student_Weight_Simulation.py" and it will display instructions and user input space for you. 
 Here is a step by step explanation: 
 
 1. Input the population size you want to generate
@@ -101,3 +101,13 @@ Hope you enjoy!</span>
 * <span style="font-size:1.2em;">Body weight and height: https://www.kaggle.com/mustafaali96/weight-height/downloads/weight-height.csv/1</span>
 * <span style="font-size:1.2em;">Heart rate: https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/exercise-intensity/art-20046887</span>
 * <span style="font-size:1.2em;">Exercise calorie burn: https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/exercise-intensity/art-20046887</span>
+* Formula used: 
+    - BMR
+        - Male: 66+(6.23*Weight)+(12.7*Height)-(6.8*Age)
+        - Female: 655+(4.35*Weight)+(4.7*Height)-(4.7*Age)
+    - Calorie to pounds: generally speaking, 3500 calorie = 1 pound; We also made adjustments to  make it more realistic. 
+        - If the calorie change is negative, the adjustment is wl_adj = 0.0002*days<sup>2</sup>+0.005*days; 
+        - if the calorie change is positive, the adjustment is 0.0001*days<sup>2</sup>+0.027*days
+    - Calorie burnt during exercise
+        - Male:((0.2017*Age) - (0.09036*Weight) + (Target Heart Rate)*0.6309) - 55.0969)*Exercise Time/4.184)
+        - Female: ((0.074*Age) - (0.05741*Weight) + (Target Heart Rate*0.4472) - 20.4022)*Exercise Time/4.184

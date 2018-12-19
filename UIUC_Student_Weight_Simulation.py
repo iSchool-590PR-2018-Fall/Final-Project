@@ -148,7 +148,7 @@ def eat_more(diet_gw_pop, month =1):
     >>> len(diet_gw_pop)
     8
     '''
-    # 0.9 (27 days a month) chance follow diet calorie and 0.1 of diet-break
+    # 0.9 (27 days a month) chance follow diet calorie and 0.1 chance that the person will have a diet-break
     diet_list = []
 
     for i in range(len(diet_gw_pop)):
@@ -551,7 +551,6 @@ def male_monthly(male_pop, goal = 'Lose Weight',month=1):
 
 # # To use the program, simply run the following cell, and follow the instruction
 
-# In[27]:
 
 print(
     "Hi there, welcome to the UIUC student body weight simulation! This program will simulation a certain size of UIUC students who want to lose, gain, or maintain their weight over a period of time. I will ask you a few questions to customize the program and will show you how their body weight change. Thank you for your interaction!")
@@ -583,10 +582,12 @@ print('Great! I have simulated {} students, and among them {} are females, {} ar
 while True:
     f_or_m = input(
         'Would you want to see the results of female or male? (Please enter "F" for female or "M" for male)   : ')
+    # if the user enter a valid gender (f, F, m, or M), the program will ask for a goal; otherwise the program will ask the user to enter a valid gender
     if f_or_m.lower() == "f":
         while True:
             goal = input(
                 'Would you want to see the results of women who have lost weight or maintained their weight? (Please enter "L" for lose weight, "M" for maintain)  ')
+            # if the user enter a valid goal, the program will generate results, otherwise the program will ask to user to enter a valid goal
             if goal.lower() != "l" and goal.lower() != "m":
                 print('\n Please enter "L" for lose weight or "M" for maintain weight')
             else:
