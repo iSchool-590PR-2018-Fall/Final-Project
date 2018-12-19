@@ -103,11 +103,11 @@ Hope you enjoy!</span>
 * <span style="font-size:1.2em;">Exercise calorie burn: https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/exercise-intensity/art-20046887</span>
 * Formula used: 
     - BMR
-        - Male: 66+(6.23*Weight)+(12.7*Height)-(6.8*Age)
-        - Female: 655+(4.35*Weight)+(4.7*Height)-(4.7*Age)
+        - Male: 66+(6.23 x Weight)+(12.7 x Height)-(6.8 x Age)
+        - Female: 655+(4.35 x Weight)+(4.7 x Height)-(4.7 x Age)
     - Calorie to pounds: generally speaking, 3500 calorie = 1 pound; We also made adjustments to  make it more realistic. 
-        - If the calorie change is negative, the adjustment is wl_adj = 0.0002*days<sup>2</sup>+0.005*days; 
-        - if the calorie change is positive, the adjustment is 0.0001*days<sup>2</sup>+0.027*days
+        - If the calorie change is negative, the adjustment is wl_adj = 0.0002 x days<sup>2</sup>+0.005 x days; 
+        - if the calorie change is positive, the adjustment is 0.0001 x days<sup>2</sup>+0.027 x days
     - Calorie burnt during exercise
-        - Male:((0.2017*Age) - (0.09036*Weight) + (Target Heart Rate)*0.6309) - 55.0969)*Exercise Time/4.184)
-        - Female: ((0.074*Age) - (0.05741*Weight) + (Target Heart Rate*0.4472) - 20.4022)*Exercise Time/4.184
+        - Male:((0.2017 x Age) - (0.09036 x Weight) + (Target Heart Rate) x 0.6309) - 55.0969) x Exercise Time/4.184)
+        - Female: ((0.074 x Age) - (0.05741 x Weight) + (Target Heart Rate x 0.4472) - 20.4022) x Exercise Time/4.184
