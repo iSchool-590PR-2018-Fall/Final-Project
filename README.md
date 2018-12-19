@@ -7,9 +7,14 @@
 
 ## Team Member(s):
 *  <span style="font-size:1.2em;">Linxi Liu (LinxiLoveCS)</span>
+
+    Found distribution for body weight and heights and UIUC student gender; Defined functions of heart rate, calorie intakes, calorie burn, and population generation; Coded the user input part; Wrote the README
 * <span style="font-size:1.2em;"> Junyi Zheng (Rickeyddddx)</span>
+    
+    Found distribution for UIUC student age and exercise time; Defined function that generates PERT distribution; Added doc tests; Analyzed the simulation results; Tested the code to find bugs
 * <span style="font-size:1.2em;"> Shijia Zhang (zsjgithub654)</span>
 
+    Found distribution for exercise intensity; Added doc tests; Analyzed the simulation results; Fixed typos in comments of the code; Tested the code to find bugs
 
 # Monte Carlo Simulation Scenario & Purpose:
    <span style="font-size:1.2em;">
@@ -83,6 +88,7 @@ From the plots of maintaining weight of female and male,we could see that women 
 <span style="font-size:1.2em;">
     Simply run the program and it will display instructions and user input space for you. 
 Here is a step by step explanation: 
+
 1. Input the population size you want to generate
 2. Input the number of month you want to simulate
 3. Now the population has been successfully generated and you will need to specify a group of people of whom you want to see the results. E.g. you may want to see how things go for females who wants to lose weight; or you may want to see how weight has changed for those males who want to maintain, etc. 

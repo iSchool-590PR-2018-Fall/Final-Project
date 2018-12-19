@@ -271,7 +271,7 @@ def population(pop_size=1000,male=m,female=f):
     male_pop.loc[male_maintain.index.values,'Goal'] = 'Maintain'
 
 
-    # Suppose 87% female wants to lose weight, and the rest 13% wants to maintain
+    # Suppose 75% female wants to lose weight, and the rest 25% wants to maintain
     female_lw = female_pop.sample(frac = 0.75)
     female_maintain = female_pop.drop(female_pop.index[female_lw.index.values])
     female_pop['Goal']= np.zeros(len(female_pop))
@@ -281,9 +281,8 @@ def population(pop_size=1000,male=m,female=f):
     return male_pop, female_pop, male_lw, male_maintain,male_gw, female_lw, female_maintain,num_male, num_female
 
 
-# ## Results
+#  Results
 
-# In[26]:
 
 def female_monthly( female_pop, goal ,month=1):
     '''Gives result after a month for women
@@ -396,7 +395,7 @@ def female_monthly( female_pop, goal ,month=1):
 
 def male_monthly(male_pop, goal = 'Lose Weight',month=1):
     '''Gives result after a month for women
-    :param female_pop: a dataframe representing a subset of female with a certain goal
+    :param male_pop: a dataframe representing a subset of male with a certain goal
     :param goal: a string that shows the goal. Three goals avaialbe: "Lose Weight","Maintain", and "Gain Weight"
     :return result: a dataframe with columns: 'BMR','Diet (calories)','Exercise Time/Multiple','Weight Change',and 'New Weight'  
     >>> p = population(150)
@@ -421,13 +420,13 @@ def male_monthly(male_pop, goal = 'Lose Weight',month=1):
         ex_result = one_month_later.loc[ex_pop.index.values,:]
         combo_pop = male_reset.drop(list(diet_pop.index.values) +  list(ex_pop.index.values))
         combo_result = one_month_later.loc[combo_pop.index.values,:]
-        #simulate total diet change and exercise time over a month for each woman who wants to lose weight
+        # simulate total diet change and exercise time over a month for each man who wants to lose weight
         diet_result['Diet (calories)']=diet_monthly(diet_pop)
         ex_result['Exercise Time/Multiple'] = exercise_monthly(ex_pop)
         combo_result['Diet (calories)']=diet_monthly(combo_pop)
         combo_result['Exercise Time/Multiple'] = exercise_monthly(combo_pop)
 
-        #calculate net calorie change for each women in the month
+        # calculate net calorie change for each man in the month
         ex_cal = np.array(-(((0.2017*ex_pop.Age) - (0.09036*ex_pop.Weight) + (ex_pop['Target Heart Rate']*0.6309) - 55.0969)*ex_result['Exercise Time/Multiple']/4.184))
         combo_cal = np.array(diet_monthly(combo_pop))-(np.array(((0.2017*combo_pop.Age) - (0.09036*combo_pop.Weight) + (combo_pop['Target Heart Rate']*0.6309) - 55.0969)*combo_result['Exercise Time/Multiple']/4.184))
 
@@ -505,12 +504,12 @@ def male_monthly(male_pop, goal = 'Lose Weight',month=1):
         combo_pop = male_reset.drop(diet_pop.index.values)
         combo_result = one_month_later.loc[combo_pop.index.values,:]
 
-        #simulate total diet change and exercise time over a month for each woman who wants to lose weight
+        #simulate total diet change and exercise time over a month for each man who wants to lose weight
         diet_result['Diet (calories)']=eat_more(diet_pop)
         combo_result['Diet (calories)']=eat_more(combo_pop)
         combo_result['Exercise Time/Multiple'] = light_ex(combo_pop)
 
-        #calculate net calorie change for each women in the month
+        #calculate net calorie change for each man in the month
         combo_cal = np.array(combo_result['Diet (calories)'])-(np.array(((0.2017*combo_pop.Age) - (0.09036*combo_pop.Weight) + (combo_pop['Target Heart Rate']*0.6309) - 55.0969)*combo_result['Exercise Time/Multiple']/4.184))
 
         # calculate weight change based on the total calorie changes through diet and exercise
