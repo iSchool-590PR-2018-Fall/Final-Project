@@ -6,6 +6,8 @@
 
 SmriitiSinghal, yuexian2, EmmaYazhuo
 
+We chose Pair programming for this project-  all are equal contributors.
+
 # Monte Carlo Simulation Scenario & Purpose:
 Goal: 
 We are simulating the scenario where a user goes to an online dating website to find the best match for himself. Based on the personal information he enters, the website will recommend a potential list of candidates for real-life dating. Then, the user will meet these candidates one by one in real life. But going through all the candidates and then making a decision is not wise or advisable due to many factors. So, we are helping USER to decide the best time for him to make a choice to find the best matched person. 
@@ -67,6 +69,8 @@ Based on User's personal information, the program pfredicts the 'Best Time' for 
 This 'Best Time' varies for user to user based on their specific input parameters.
 For a USER having same input paarmeters, the 'Best Time' comes out to be the same every time the program is run -> because of                                                                                                               implementing Monte Carlo Simulation.
 ## Instructions on how to use the program:
-Follow all the steps and input all the information as asked on the user interface. No special setup required.
+Keep mock_data.py and candidate.py in a folder. First run mock_data.py. It is used to generate mock data (dummy data) for our program. A json file (data.json) is created after running mock_data.py which contains mock data of 200 people. Now run our main logic file, candidate.py. It access the data.json file and give the desired output. 
+
+Note: db.py file was initially been used in our program but later we removed its dependency. Please ignore this file.
 
 ## All Sources Used:
